@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomePage from './components/week_6/class_1/pages/home/Home.container';
 import AboutPage from './components/week_6/class_1/pages/about/About.container';
