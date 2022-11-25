@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import React, { useEffect, useState } from 'react';
+import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
 import HomePage from './components/week_6/class_1/pages/home/Home.container';
 import AboutPage from './components/week_6/class_1/pages/about/About.container';
 import LoginPage from './components/week_6/class_1/pages/auth/login/Login.container';
@@ -14,7 +14,9 @@ const AppRouter = () => {
         <Route element={<ProtectedRoutes isAuthenticated={isAuth} />}>
           <Route path="/home" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
+          <Route path="/users/user/:login" element={<UserPage />} />
         </Route>
+        <Route path="*" element={<ErrorPage />} />
       </Routes>
     </BrowserRouter>
   )

@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Login from './Login'
 import { useNavigate } from "react-router-dom";
+
 const LoginContainer = ({ setIsAuth }) => {
   const [values, setValues] = useState({ email: "", password: "" });
 
@@ -13,7 +14,7 @@ const LoginContainer = ({ setIsAuth }) => {
 
     if (values.email.length > 0 && values.password.length > 0) {
       setIsAuth(true);
-      navigate("/home")
+      navigate("/users")
       console.log("submit", values);
     }
   }
