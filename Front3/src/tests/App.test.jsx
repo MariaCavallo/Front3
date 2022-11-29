@@ -3,15 +3,15 @@ import { render, screen } from "@testing-library/react";
 import App from "../App";
 
 describe("Testear App", () => {
-    it("renders an h1 with a value", () => {
-        const person = "Kike";
+  it("renders an h1 with a value", () => {
+    const person = "Kike";
 
-        render(<App person={person} />)
+    render(<App person={person} />)
 
-        expect(
-            screen.getByRole("heading", {
-                level: 1
-            })
-        ).toHaveTextContent(`Hola ${person}`);
-    })
+    expect(
+      screen.getByRole("heading", {
+        level: 1
+      })
+    ).toHaveTextContent(`Hola ${person}`);
+  })
 })

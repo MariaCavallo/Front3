@@ -6,8 +6,8 @@ import { getValue } from "../App";
 expect.extend(matchers);
 
 describe("test function getValue", () => {
-    test("tests whether it return 1 or 0", () => {
-        const value = getValue("expected");
-        expect(value).toBe(1)
-    })
+  test("tests whether it return 1 or 0", () => {
+    const value = getValue("expected");
+    expect(value).toBe(1)
+  })
 })
