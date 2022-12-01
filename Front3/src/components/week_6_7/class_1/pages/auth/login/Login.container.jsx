@@ -1,8 +1,13 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import Login from './Login'
 import { useNavigate } from "react-router-dom";
-const LoginContainer = ({ setIsAuth }) => {
+import { AuthenticationContext } from '../../../context/GhContext';
+
+const LoginContainer = () => {
+
   const [values, setValues] = useState({ email: "", password: "" });
+
+  const { handlerAuthentication } = useContext(AuthenticationContext);
 
   const handleChange = (prop) => (event) => {
     setValues({ ...values, [prop]: event.target.value })
@@ -12,8 +17,8 @@ const LoginContainer = ({ setIsAuth }) => {
     e.preventDefault();
 
     if (values.email.length > 0 && values.password.length > 0) {
-      setIsAuth(true);
-      navigate("/users")
+      handlerAuthentication();
+      navigate("/users");
       console.log("submit", values);
     }
   }
