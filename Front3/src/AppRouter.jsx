@@ -7,6 +7,8 @@ import LoginPage from './components/week_6/class_1/pages/auth/login/Login.contai
 import ErrorPage from './components/week_6/class_1/pages/error/Error';
 import UserPage from './components/week_6/class_1/pages/user/User.container';
 import AuthenticationProvider from './components/week_6_7/class_1/context/GhContext';
+import Home from './components/week_6_7/class_2/Home';
+import About from './components/week_6_7/class_2/About';
 
 const AppRouter = () => {
 
@@ -14,13 +16,8 @@ const AppRouter = () => {
     <BrowserRouter>
       <AuthenticationProvider>
       <Routes>
-        <Route path="/login" element={<LoginPage  />} />
-        <Route element={<ProtectedRoutes />}>
-          <Route path="/users" element={<HomePage />} />
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/users/user/:login" element={<UserPage />} />
-        </Route>
-        <Route path="*" element={<ErrorPage />} />
+        <Route path='/' element={<Home />}/>
+        <Route path='/about' element={<About />}/>
       </Routes>
       </AuthenticationProvider>
     </BrowserRouter>
